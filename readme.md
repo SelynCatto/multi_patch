@@ -2,7 +2,7 @@
 work in progress repo of patches used to build & boot xdroid on A13
 
 ## Credits
-These people have helped this project in some way or another, so they should be the ones who receive all the credit:
+These people have helped this project, mostly because I took patches from them (heh, sorry x3)
 - [Nazim](https://github.com/naz664)
 - [Phhusson](https://github.com/phhusson)
 - [AndyYan](https://github.com/AndyCGYan)
