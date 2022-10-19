@@ -18,7 +18,7 @@ index 625894a77..c7f961d3c 100644
  
 -# Telephony:
 -#   Provide a APN configuration to GSI product
--ifeq ($(SPARK_BUILD),)
+-ifeq ($(XDROID_BUILD),)
 -PRODUCT_COPY_FILES += \
 -    device/sample/etc/apns-full-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
 -endif
@@ -30,7 +30,7 @@ index c0ed7ec8e..8e15004be 100644
  PRODUCT_COPY_FILES := \
      frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
  
--ifeq ($(SPARK_BUILD),)
+-ifeq ($(XDROID_BUILD),)
 -PRODUCT_COPY_FILES += \
 -    device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.xml
 -endif
