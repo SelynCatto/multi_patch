@@ -1,6 +1,6 @@
 # Place the patches in vendor/extra/patches
 # The script goes inside patches folder
-# run it on the dir root aka ./vendor/extra/patches/script.sh
+# run it on the dir root aka ./vendor/extra/patches/patch.sh
 # run it after running . build/envsetup.sh
 
 export VENDOR_EXTRA_PATH=$(gettop)/vendor/extra
