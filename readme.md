@@ -3,6 +3,7 @@ work in progress repo of patches used to build & boot some gsis on A13
 
 ## Credits
 These people have helped this project, mostly because I took patches from them (heh, sorry x3)
+- [Project Elixir](https://github.com/Project-Elixir/)
 - [Xdroid](https://github.com/xdroid-oss)
 - [Nazim](https://github.com/naz664)
 - [Phhusson](https://github.com/phhusson)
