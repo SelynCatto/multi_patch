@@ -13,10 +13,20 @@ mv ./multi_patch/patches/ponces ./multi_patch/patches/pon/patches
 mv ./multi_patch/patches/trebledroid ./multi_patch/patches/tre/patches
 
 echo "Patching with script"
+echo "Chondoe"
+sleep 2
 bash ./multi_patch/apply.sh ./multi_patch/patches/chon
+echo "Nazim"
+sleep 2
 bash ./multi_patch/apply.sh ./multi_patch/patches/naz
+echo  "Phh"
+sleep 2
 bash ./multi_patch/apply.sh ./multi_patch/patches/ph
+echo "Ponces"
+sleep 2
 bash ./multi_patch/apply.sh ./multi_patch/patches/pon
+echo "trebledroid"
+sleep 2
 bash ./multi_patch/apply.sh ./multi_patch/patches/tre
 
 echo "Shitty script completed. Have fun!"
