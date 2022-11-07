@@ -1,19 +1,22 @@
-#!/bin/bash
+echo "
+Disclaimer! This is a janky script I put together in like 5 minutes LMAO!
+But it should work!"
 
-# Place the patches in vendor/extra/patches
-# The script goes inside patches folder
-# run it on the dir root aka ./vendor/extra/patches/patch.sh
-# run it after running . build/envsetup.sh
+sleep 5
 
-export VENDOR_EXTRA_PATH=$(gettop)/vendor/extra
-export VENDOR_PATCHES_PATH="$VENDOR_EXTRA_PATH"/patches
+echo "Setting up patch layouts in for contributors..."
+mkdir ./multi_patch/patches/chon ./multi_patch/patches/naz ./multi_patch/patches/ph ./multi_patch/patches/pon ./multi_patch/patches/tre
+mv ./multi_patch/patches/chondoe ./multi_patch/patches/chon/patches
+mv ./multi_patch/patches/nazim ./multi_patch/patches/naz/patches
+mv ./multi_patch/patches/phh ./multi_patch/patches/ph/patches
+mv ./multi_patch/patches/ponces ./multi_patch/patches/pon/patches
+mv ./multi_patch/patches/trebledroid ./multi_patch/patches/tre/patches
 
-for contributor in chondo nazim peter phh sooti
-    for project_name in $(cd "$VENDOR_PATCHES_PATH"; echo */); do
-        project_path="$(tr _ / <<<$project_name)"
+echo "Patching with script"
+bash ./multi_patch/apply.sh ./multi_patch/patches/chon
+bash ./multi_patch/apply.sh ./multi_patch/patches/naz
+bash ./multi_patch/apply.sh ./multi_patch/patches/ph
+bash ./multi_patch/apply.sh ./multi_patch/patches/pon
+bash ./multi_patch/apply.sh ./multi_patch/patches/tre
 
-        cd "$ANDROID_BUILD_TOP"/"$project_path"
-        git am. "$VENDOR_PATCHES_PATH"/" $contributor"/"$project_name"/*.patch
-        git am --abort &> /dev/null
-    done
-done
+echo "Shitty script completed. Have fun!"
