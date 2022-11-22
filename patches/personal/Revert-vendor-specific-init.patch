@@ -1,17 +1,22 @@
-From 6a3f7731af98983a28922f30fc24417195ec47da Mon Sep 17 00:00:00 2001
-From: naz664 <nazimnavas145@gmail.com>
-Date: Mon, 12 Sep 2022 14:06:42 +0000
-Subject: [PATCH 1/3] Revert-vendor-specific-init.patch.patch
+From dd7b4abcf51e44d65b1c2c152b9aa858aef82de5 Mon Sep 17 00:00:00 2001
+From: ItsLynix <lynixfoxxo@gmail.com>
+Date: Tue, 22 Nov 2022 01:00:11 +0000
+Subject: [PATCH] 	modified:   init/Android.bp 	modified:  
+ init/property_service.cpp 	deleted:    init/vendor_init.cpp 
+ deleted:    init/vendor_init.h
 
+Change-Id: I63644728d3b75954af29538f8263c85fbbd0777f
 ---
  init/Android.bp           |  9 ---------
  init/property_service.cpp |  4 ----
  init/vendor_init.cpp      | 37 -------------------------------------
  init/vendor_init.h        | 33 ---------------------------------
  4 files changed, 83 deletions(-)
+ delete mode 100644 init/vendor_init.cpp
+ delete mode 100644 init/vendor_init.h
 
 diff --git a/init/Android.bp b/init/Android.bp
-index 453d31a62..f7fdd264f 100644
+index db8204f..63bf43f 100644
 --- a/init/Android.bp
 +++ b/init/Android.bp
 @@ -89,14 +89,6 @@ init_host_sources = [
@@ -29,7 +34,7 @@ index 453d31a62..f7fdd264f 100644
  soong_config_module_type {
      name: "libinit_cc_defaults",
      module_type: "cc_defaults",
-@@ -216,7 +208,6 @@ cc_library_static {
+@@ -226,7 +218,6 @@ cc_library_static {
      defaults: [
          "init_defaults",
          "selinux_policy_version",
@@ -38,7 +43,7 @@ index 453d31a62..f7fdd264f 100644
      srcs: init_common_sources + init_device_sources,
      generated_sources: [
 diff --git a/init/property_service.cpp b/init/property_service.cpp
-index 201c88324..1791e4b86 100644
+index eea4fd0..3f578fa 100644
 --- a/init/property_service.cpp
 +++ b/init/property_service.cpp
 @@ -73,7 +73,6 @@
@@ -49,9 +54,9 @@ index 201c88324..1791e4b86 100644
  
  using namespace std::literals;
  
-@@ -1243,9 +1242,6 @@ void PropertyLoadBootDefaults() {
-         }
-     }
+@@ -1142,9 +1141,6 @@ void PropertyLoadBootDefaults() {
+     // Weaken property override security during execution of the vendor init extension
+     weaken_prop_override_security = true;
  
 -    // Update with vendor-specific property runtime overrides
 -    vendor_load_properties();
@@ -60,9 +65,10 @@ index 201c88324..1791e4b86 100644
      property_initialize_build_id();
      property_derive_build_fingerprint();
 diff --git a/init/vendor_init.cpp b/init/vendor_init.cpp
-index d3fd5ffe2..e69de29bb 100644
+deleted file mode 100644
+index d3fd5ff..0000000
 --- a/init/vendor_init.cpp
-+++ b/init/vendor_init.cpp
++++ /dev/null
 @@ -1,37 +0,0 @@
 -/*
 -Copyright (c) 2013, The Linux Foundation. All rights reserved.
@@ -102,9 +108,10 @@ index d3fd5ffe2..e69de29bb 100644
 -{
 -}
 diff --git a/init/vendor_init.h b/init/vendor_init.h
-index 9afb449be..e69de29bb 100644
+deleted file mode 100644
+index 9afb449..0000000
 --- a/init/vendor_init.h
-+++ b/init/vendor_init.h
++++ /dev/null
 @@ -1,33 +0,0 @@
 -/*
 -Copyright (c) 2013, The Linux Foundation. All rights reserved.
@@ -140,5 +147,5 @@ index 9afb449be..e69de29bb 100644
 -extern void vendor_load_properties(void);
 -#endif /* __INIT_VENDOR__H__ */
 -- 
-2.25.1
+2.34.1
 
